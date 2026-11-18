@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cara Menulis JS di HTML</title>
+</head>
+<body>
+
+  <h1>Cara Menulis JavaScript di HTML</h1>
+  <p>Ada 3 cara: Embed, Inline, dan External.</p>
+
+  <!-- =============================================
+    CARA 1: EMBED
+    JavaScript ditulis langsung di dalam file HTML
+    menggunakan tag <script>
+  ============================================= -->
+  <h2>1. Embed</h2>
+  <p id="output-embed"></p>
+
+  <script>
+    // JS ditulis langsung di dalam HTML (embed)
+    let pesan = "Halo dari Embed JS!";
+    document.getElementById("output-embed").innerText = pesan;
+    console.log(pesan);
+  </script>
+
+
+  <!-- =============================================
+    CARA 2: INLINE
+    JavaScript ditulis di dalam atribut HTML (onclick, dll)
+  ============================================= -->
+  <h2>2. Inline</h2>
+  <a href="#" onclick="alert('Yey!')">Klik link ini!</a>
+  <br /><br />
+  <button onclick="console.log('Tombol diklik!')">Klik Tombol</button>
+
+
+  <!-- =============================================
+    CARA 3: EXTERNAL
+    JavaScript disimpan di file .js terpisah
+    lalu dihubungkan dengan atribut src
+  ============================================= -->
+  <h2>3. External</h2>
+  <p>Lihat file <code>external-script.js</code> yang dihubungkan di bawah.</p>
+
+  <!-- File JS eksternal dipanggil di sini -->
+  <script src="external-script.js"></script>
+
+</body>
+</html>
