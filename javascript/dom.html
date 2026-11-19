@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Belajar DOM</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .list-items { color: steelblue; }
+    .active { font-weight: bold; background-color: yellow; }
+  </style>
+</head>
+<body>
+
+  <h1 id="header-title">My Header</h1>
+
+  <h2 id="judul">Judul Awal</h2>
+
+  <ul>
+    <li class="list-items">Item 1</li>
+    <li class="list-items">Item 2</li>
+    <li class="list-items">Item 3</li>
+  </ul>
+
+  <a href="https://revou.co/">My Link</a>
+
+  <div id="footer">
+    <p>Footer content</p>
+  </div>
+
+  <hr />
+
+  <!-- Tombol untuk demo manipulasi DOM -->
+  <button onclick="ubahJudul()">Ubah Judul</button>
+  <button onclick="ubahWarna()">Ubah Warna</button>
+  <button onclick="tambahElemen()">Tambah Paragraf</button>
+
+  <script>
+    // ── 1. Get by ID ──────────────────────────────
+    var title = document.getElementById("header-title");
+    console.log("getElementById:", title);
+
+    // ── 2. Get by Class Name ──────────────────────
+    var items = document.getElementsByClassName("list-items");
+    console.log("getElementsByClassName:", items);
+
+    // ── 3. Get by Tag Name ────────────────────────
+    var listItems = document.getElementsByTagName("li");
+    console.log("getElementsByTagName:", listItems);
+
+    // ── 4. querySelector ──────────────────────────
+    var footer   = document.querySelector("#footer");        // by ID
+    var listItem = document.querySelector(".list-items");    // by Class (pertama)
+    var header   = document.querySelector("h2");             // by Tag
+    console.log("querySelector #footer:", footer);
+    console.log("querySelector .list-items:", listItem);
+    console.log("querySelector h2:", header);
+
+    // ── Manipulasi DOM ────────────────────────────
+    function ubahJudul() {
+      var el = document.getElementById("judul");
+      el.innerText = "Judul sudah diubah oleh JS!";
+      el.classList.add("active");
+    }
+
+    function ubahWarna() {
+      var el = document.getElementById("judul");
+      el.style.color = "red";
+      el.style.fontSize = "28px";
+    }
+
+    function tambahElemen() {
+      var p = document.createElement("p");
+      p.innerText = "Paragraf baru dibuat oleh JS 🎉";
+      p.style.color = "green";
+      document.body.appendChild(p);
+    }
+  </script>
+
+</body>
+</html>
